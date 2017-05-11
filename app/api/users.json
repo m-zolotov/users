@@ -1,0 +1,44 @@
+[
+  {
+    "age": 81,
+    "id": 1,
+    "name": "Ivan",
+    "status": true
+  },
+  {
+    "age": 18,
+    "id": 2,
+    "name": "Aaron",
+    "status": false
+  },
+  {
+    "age": 14,
+    "id": 3,
+    "name": "Carl",
+    "status": true
+  },
+  {
+    "age": 63,
+    "id": 4,
+    "name": "Boris",
+    "status": true
+  },
+  {
+    "age": 70,
+    "id": 5,
+    "name": "Cedric",
+    "status": false
+  },
+  {
+    "age": 31,
+    "id": 6,
+    "name": "Abel",
+    "status": true
+  },
+  {
+    "age": 24,
+    "id": 7,
+    "name": "Bernard",
+    "status": false
+  }
+]

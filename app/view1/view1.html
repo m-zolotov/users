@@ -1,1 +1,23 @@
-<p>This is the partial for view 1.</p>
+<!--<p>This is the partial for view 1.</p>-->
+<div class="container" ng-app="firstPage">
+    <h1 ng-bind="title"></h1>
+    <table class="table table-condensed table-hover table-bordered" ng-controller="View1Ctrl">
+        <thead class="bg-primary">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th class="text-center">Age</th>
+                <th class="text-center">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in users">
+                <td ng-bind="user.id"></td>
+                <td ng-bind="user.name"></td>
+                <td class="text-center" ng-bind="user.age"></td>
+                <td class="text-center" ng-bind="user.status"></td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>Общее количество юзеров: {{users.length}}</h4>
+</div>
