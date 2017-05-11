@@ -9,9 +9,18 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', ['$scope','$http', function($scope, $http, myUserService) {
+.service('myUserService', function () {
+    let self = this;
+    this.myText = '';
+    this.getLength = function () {
+        return self.myText.length;
+    }
+})
+
+.controller('View1Ctrl', ['$scope','$http', 'myUserService', function($scope, $http, myUserService) {
     $scope.title = 'Список юзеров';
     $http.get('./api/users.json').success(function (data, status, headers, config) {
         $scope.users = data;
     });
+    console.log(myUserService);
 }]);
