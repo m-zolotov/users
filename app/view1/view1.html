@@ -1,6 +1,8 @@
 <!--<p>This is the partial for view 1.</p>-->
 <div class="container" ng-app="myApp.view1">
-    <h1 ng-bind="title"></h1>
+    <div class="page-header">
+        <h2><span ng-bind="title"></span> <span class="label label-info">{{users.length}}</span></h2>
+    </div>
     <table class="table table-condensed table-hover table-bordered" ng-controller="View1Ctrl">
         <thead class="bg-primary">
             <tr>
@@ -19,5 +21,4 @@
             </tr>
         </tbody>
     </table>
-    <h4>Общее количество юзеров: {{users.length}}</h4>
 </div>

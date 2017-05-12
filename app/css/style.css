@@ -2,4 +2,7 @@ body {
   font-family: 'Roboto', sans-serif;
   background: #ffffff; }
 
+.label {
+  padding: .2em .5em .1em; }
+
 /*# sourceMappingURL=style.css.map */

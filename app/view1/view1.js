@@ -9,18 +9,29 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.service('myUserService', function () {
-    let self = this;
-    this.myText = '';
-    this.getLength = function () {
-        return self.myText.length;
-    }
-})
-
-.controller('View1Ctrl', ['$scope','$http', 'myUserService', function($scope, $http, myUserService) {
+/*.controller('View1Ctrl', ['$scope', '$http', function($scope, $http) {
     $scope.title = 'Список юзеров';
     $http.get('./api/users.json').success(function (data, status, headers, config) {
         $scope.users = data;
     });
-    console.log(myUserService);
+}]);*/
+
+/*.service('UserService', function ($http) {
+    let self = this;
+    self.getInfo = function () {
+        $http.get('./api/users.json').success(function (data, status, headers, config) {
+            $scope.users = data;
+        });
+    }
+})*/
+
+.service('UserService', function () {
+
+})
+
+.controller('View1Ctrl', ['$scope', '$http', 'UserService', function($scope, $http, UserService) {
+    $scope.title = 'Список юзеров';
+    $http.get('./api/users.json').success(function (data, status, headers, config) {
+        $scope.users = data;
+    });
 }]);
