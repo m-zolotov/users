@@ -9,29 +9,16 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-/*.controller('View1Ctrl', ['$scope', '$http', function($scope, $http) {
-    $scope.title = 'Список юзеров';
+.service('UserService', function ($http) {
+    var self = this;
+    this.userList;
     $http.get('./api/users.json').success(function (data, status, headers, config) {
-        $scope.users = data;
+        self.userList = data;
+        return self.userList;
     });
-}]);*/
-
-/*.service('UserService', function ($http) {
-    let self = this;
-    self.getInfo = function () {
-        $http.get('./api/users.json').success(function (data, status, headers, config) {
-            $scope.users = data;
-        });
-    }
-})*/
-
-.service('UserService', function () {
-
 })
 
 .controller('View1Ctrl', ['$scope', '$http', 'UserService', function($scope, $http, UserService) {
     $scope.title = 'Список юзеров';
-    $http.get('./api/users.json').success(function (data, status, headers, config) {
-        $scope.users = data;
-    });
+    $scope.users = UserService.userList;
 }]);
