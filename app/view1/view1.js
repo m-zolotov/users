@@ -12,11 +12,11 @@ angular.module('myApp.view1', ['ngRoute'])
 
 .factory('UserService', function($http, $q){
     var userList = undefined;
-    if (userList === undefined) {
-        return{
-            getData: function(){
-                var deferred = $q.defer();
+    return{
+        getData: function(){
+            var deferred = $q.defer();
 
+            if (userList === undefined) {
                 $http({
                     method: 'GET', url: './api/users.json'
                 }).
@@ -27,12 +27,12 @@ angular.module('myApp.view1', ['ngRoute'])
                         deferred.reject(response.status);
                     }
                 );
-
-                return deferred.promise;
+            } else {
+                deferred.resolve(userList);
             }
+
+            return deferred.promise;
         }
-    } else {
-        return userList;
     }
 })
 
