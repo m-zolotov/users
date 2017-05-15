@@ -1,19 +1,9 @@
-'use strict';
+/*angular.
+module('UserService').
+component('UserService', {...});*/
 
-// Declare app level module which depends on views, and components
-
-angular.module('UserService', []);
 /*
-angular.module('usersModule', [
-    'ngRoute'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-    $locationProvider.hashPrefix('!');
-
-    $routeProvider.otherwise({redirectTo: '/view1'});
-}])*/
-
-/*.factory('UserService', function($http, $q){
+.factory('UserService', function($http, $q){
     var userList = undefined;
     return{
         getData: function(){
