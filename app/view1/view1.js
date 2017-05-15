@@ -9,7 +9,25 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
+
 .factory('UserService', function($http, $q){
+    return{
+        getData: function(){
+            var deferred = $q.defer();
+            $http({method: 'GET', url: './api/users.json'}).
+            then (function success(response) {
+                    deferred.resolve(response.data.question);
+                },function error(response) {
+                    deferred.reject(response.status);
+                }
+            );
+
+            return deferred.promise;
+        }
+    }
+})
+
+/*.factory('UserService', function($http, $q){
     return{
         getData: function(){
             var deferred = $q.defer();
@@ -24,7 +42,7 @@ angular.module('myApp.view1', ['ngRoute'])
             return deferred.promise;
         }
     }
-})
+})*/
 
 
 /*.service('UserService', function ($http) {
@@ -42,9 +60,19 @@ angular.module('myApp.view1', ['ngRoute'])
     console.log(UserService);
     $q*/
     /*$scope.users = UserService.getData();*/
-    var promiseObj=UserService.getData();
+    /*var promiseObj=UserService.getData();
     promiseObj.then(function(value) {
         $scope.users = value;
     });
-    console.log($scope.users);
+    console.log($scope.users);*/
+
+    var promiseObj=UserService.getData();
+    promiseObj.then(function(value) { $scope.question=value; });
+
+    $scope.voteUp = function (answer){
+        answer.rate++;
+    };
+    $scope.voteDown = function (answer){
+        answer.rate--;
+    };
 }]);
