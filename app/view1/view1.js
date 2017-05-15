@@ -11,20 +11,22 @@ angular.module('myApp.view1', ['ngRoute'])
 
 
 .factory('UserService', function($http, $q){
-    var userList = null;
+    var userList = undefined;
     return{
         getData: function(){
             var deferred = $q.defer();
-            $http({
-                method: 'GET', url: './api/users.json'
-            }).
-            then (function success(response) {
-                    userList = response.data;
-                    deferred.resolve(userList);
-                },function error(response) {
-                    deferred.reject(response.status);
-                }
-            );
+            if (userList === undefined) {
+                $http({
+                    method: 'GET', url: './api/users.json'
+                }).
+                then (function success(response) {
+                        userList = response.data;
+                        deferred.resolve(userList);
+                    },function error(response) {
+                        deferred.reject(response.status);
+                    }
+                );
+            }
 
             return deferred.promise;
         }
