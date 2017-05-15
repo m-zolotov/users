@@ -20,7 +20,7 @@ angular.module('myApp.view1', ['ngRoute'])
             }).
             then (function success(response) {
                     /*deferred.resolve(response.data.question);*/
-                    userList = response.data.question;
+                    userList = response.data;
                     deferred.resolve(userList);
                 },function error(response) {
                     deferred.reject(response.status);
@@ -40,7 +40,7 @@ angular.module('myApp.view1', ['ngRoute'])
         $scope.users = value;
     });
     console.log($scope.users);
-    
+
     /*$scope.users = UserService;
      console.log(UserService);
      $q*/
