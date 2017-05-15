@@ -3,14 +3,14 @@
 angular.module('myApp.view1', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
-  });
+    $routeProvider.when('/view1', {
+        templateUrl: 'view1/view1.html',
+        controller: 'View1Ctrl'
+    });
 }])
 
 
-.factory('UserService', function($http, $q){
+/*.factory('UserService', function($http, $q){
     var userList = undefined;
     return{
         getData: function(){
@@ -34,7 +34,7 @@ angular.module('myApp.view1', ['ngRoute'])
             return deferred.promise;
         }
     }
-})
+})*/
 
 .controller('View1Ctrl', ['$scope', '$http', '$q', 'UserService', function($scope, $http, $q, UserService) {
     $scope.title = 'Список юзеров';
@@ -42,13 +42,4 @@ angular.module('myApp.view1', ['ngRoute'])
     promiseObj.then(function(value) {
         $scope.users = value;
     });
-
-    /*promiseObj.then(function(value) {
-        $scope.users = value;
-        console.log ('users', $scope.users);
-        UserService.getData().then(function(value) {
-            $scope.users2 = value;
-            console.log ('users2', $scope.users2);
-        });
-    });*/
 }]);
