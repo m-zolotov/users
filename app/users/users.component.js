@@ -6,4 +6,16 @@ usersApp.controller('UsersModule', ['$scope', '$http', '$q', 'userService', func
     promiseObj.then(function(value) {
         $scope.users = value;
     });
-}]);
+}])
+.directive('usersTable', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'users/user-table.html'
+    };
+})
+.directive('pageHeader', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'users/page-header.html'
+    };
+});
