@@ -4,3 +4,4 @@
 
 angular.module('UsersModule', ['ngRoute']);
 
+var usersApp = angular.module('UsersModule');

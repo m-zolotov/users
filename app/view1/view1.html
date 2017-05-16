@@ -1,24 +1,26 @@
 <!--<p>This is the partial for view 1.</p>-->
 <div class="container" ng-app="myApp.view1">
-    <div class="page-header">
-        <h2><span ng-bind="title"></span> <span class="label label-info">{{users.length}}</span></h2>
-    </div>
-    <table class="table table-condensed table-hover table-bordered" ng-controller="View1Ctrl">
-        <thead class="bg-primary">
+    <div ng-controller="UsersModule as usersModule">
+        <div class="page-header">
+            <h2><span ng-bind="title"></span> <span class="label label-info">{{users.length}}</span></h2>
+        </div>
+        <table class="table table-condensed table-hover table-bordered">
+            <thead class="bg-primary">
             <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th class="text-center">Age</th>
                 <th class="text-center">Status</th>
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             <tr ng-repeat="user in users">
                 <td ng-bind="user.id"></td>
                 <td ng-bind="user.name"></td>
                 <td class="text-center" ng-bind="user.age"></td>
                 <td class="text-center" ng-bind="user.status"></td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 </div>
