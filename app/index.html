@@ -1,37 +1,49 @@
 <!DOCTYPE html>
-<!--[if gt IE 8]><!--> <html lang="ru" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>My AngularJS App</title>
-  <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic-ext,latin-ext" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-  <!--<ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-  </ul>-->
 
   <div ng-view></div>
 
+  <div class="container" ng-app="UsersModule">
+    <div ng-controller="UsersModule as usersModule">
+      <div class="page-header">
+        <h2><span ng-bind="title"></span> <span class="label label-info">{{users.length}}</span></h2>
+      </div>
+      <table class="table table-condensed table-hover table-bordered">
+        <thead class="bg-primary">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th class="text-center">Age</th>
+          <th class="text-center">Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in users">
+          <td ng-bind="user.id"></td>
+          <td ng-bind="user.name"></td>
+          <td class="text-center" ng-bind="user.age"></td>
+          <td class="text-center" ng-bind="user.status"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
-  <!--<script src="bower_components/angular/angular.js"></script>-->
-  <!--<script src="bower_components/angular-route/angular-route.js"></script>-->
-  <script src="app.js"></script>
   <script src="users/users.module.js"></script>
   <script src="users/users.component.js"></script>
   <script src="users/users.service.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
 
   <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
 </body>

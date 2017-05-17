@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('UsersModule').factory('userService', function($http, $q){
+angular.module('UsersModule')
+    .factory('userService', function($http, $q){
     var userList = undefined;
     return{
         getData: function(){
