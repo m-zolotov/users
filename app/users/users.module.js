@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('UsersModule', ['ngRoute']);
+angular.module('Users', ['ngRoute']);

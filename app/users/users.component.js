@@ -1,10 +1,11 @@
 'use strict';
 
-angular.module('UsersModule')
-    .controller('UsersModule', ['$scope', '$http', '$q', 'userService', function($scope, $http, $q, userService) {
-    $scope.title = 'Список юзеров';
-    var promiseObj = userService.getData();
-    promiseObj.then(function(value) {
-        $scope.users = value;
-    });
-}]);
+angular.module('Users')
+    .controller('UsersListCtr', ['$http', '$q', 'userService', function($http, $q, userService) {
+        var self = this;
+        var promiseObj = userService.getData();
+        self.title = 'Список юзеров';
+        promiseObj.then(function(value) {
+            self.users = value;
+        });
+    }]);
