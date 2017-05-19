@@ -3,7 +3,7 @@
 angular.module('Users')
     .component('usersList', {
         templateUrl: 'users/users-list.template.html',
-        controller: ['userService', '$http', '$q', function(userService, $http, $q) {
+        controller: ['userService', '$http', '$q', '$routeParams', function(userService, $http, $q, $routeParams) {
             var self = this;
             var promiseObj = userService.getData();
             self.title = 'Список юзеров';
