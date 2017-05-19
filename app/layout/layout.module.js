@@ -6,20 +6,13 @@ angular.module('myApp')
     .config( ['$routeProvider', function($routeProvider) {
         $routeProvider
             .when('/users', {
-                templateUrl: 'users/users-list.template.html',
-                controller: ['userService', '$http', '$q', function(userService, $http, $q) {
-                    var self = this;
-                    var promiseObj = userService.getData();
-                    self.title = 'Список юзеров';
-                    promiseObj.then(function(value) {
-                        self.users = value;
-                    });
-                }]
+                templateUrl: 'users/users-list.template.html'
             })
-            .when('/users/detail', {
+            .when('/users/:userId', {
                 templateUrl: 'users/users-detail.template.html'
             })
             .otherwise({
                 redirectTo: '/users'
+                // template: '404 No such page'
             });
     }]);
