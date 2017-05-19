@@ -15,26 +15,7 @@ angular.module('Users')
     .component('userDetail', {
         templateUrl: 'users/users-detail.template.html',
         controller: ['userService', '$http', '$q', function(userService, $http, $q) {
-
+            var self = this;
+            self.title = 'Сраница юзера';
         }]
-    })
-    /*.config(function ($stateProvider, $urlRouterProvider) {
-        $stateProvider
-            .state('transactions', {
-                url: "/",
-                templateUrl: "app/main/transactions.html"
-            });
-        $urlRouterProvider.otherwise('/');
-    })*/
-    .config( ['$routeProvider', function($routeProvider) {
-        $routeProvider
-        .when('/users/list', {
-            templateUrl: 'users/users-list.template.html'
-        })
-        .when('/users/detai', {
-            templateUrl: 'users/users-detail.template.html'
-        })
-        .otherwise({
-            redirectTo: '/'
-        });
-    }]);
+    });

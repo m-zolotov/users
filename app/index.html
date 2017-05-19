@@ -10,21 +10,17 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <div class="container" ng-app="Users">
-    <ul class="menu">
-      <li><a href="#!/users/list">list</a></li>
-      <li><a href="#!/users/detai">detai</a></li>
-    </ul>
-    <users-list></users-list>
-    <users-detail></users-detail>
+  <div class="container" ng-app="myApp">
+    <div ng-view></div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
+  <script src="layout/layout.module.js"></script>
   <script src="users/users.module.js"></script>
-  <script src="users/users.component.js"></script>
   <script src="users/users.service.js"></script>
+  <script src="users/users.component.js"></script>
+  <script src="users/users.config.js"></script>
 
   <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
 </body>
