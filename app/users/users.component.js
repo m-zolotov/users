@@ -14,7 +14,7 @@ angular.module('Users')
     })
     .component('userDetail', {
         templateUrl: 'users/users-detail.template.html',
-        controller: ['userDetail', '$http', '$q', function(userDetail, $http, $q) {
+        controller: ['userService', '$http', '$q', function(userService, $http, $q) {
 
         }]
     })
@@ -28,9 +28,11 @@ angular.module('Users')
     })*/
     .config( ['$routeProvider', function($routeProvider) {
         $routeProvider
-        .when('/second', {
-            templateUrl: 'users/users-detail.template.html',
-            controller:'userDetail'
+        .when('/users/list', {
+            templateUrl: 'users/users-list.template.html'
+        })
+        .when('/users/detai', {
+            templateUrl: 'users/users-detail.template.html'
         })
         .otherwise({
             redirectTo: '/'
