@@ -6,6 +6,9 @@ angular.module('Users')
         controller: ['userService', '$http', '$q', '$routeParams', function(userService, $http, $q, $routeParams) {
             var self = this;
             var userID = $routeParams.userId;
-            self.title = 'Сраница юзера' + userID;
+            var promiseObjDetail = userService.getData();
+            console.log(promiseObjDetail);
+            //var userName = $routeParams.userName;
+            self.title = 'Сраница юзера ' + userID;//user.name
         }]
     });

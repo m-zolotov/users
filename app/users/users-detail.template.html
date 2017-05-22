@@ -1,5 +1,19 @@
 <div class="page-header table-header">
-    <h2><span ng-bind="$ctrl.title"></span></h2>
+    <h2><span ng-bind="$ctrl.title"></span></h2><!--user.name-->
 </div>
 
-<p>Перейти к <a href="#!/users/list">странице списка юзеров</a>.</p>
+<div class="well">
+    <div class="well-element-block">
+        <p><strong>Пол:</strong> <span ng-bind="user.gender"></span></p>
+        <p><strong>Возраст:</strong> <span ng-bind="user.age"></span></p>
+        <p><strong>Баланс счета:</strong> <span ng-bind="user.balance"></span></p>
+        <p><strong>Телефон:</strong> <span ng-bind="user.phone"></span></p>
+        <p><strong>E-mail:</strong> <span ng-bind="user.email"></span></p>
+        <p><strong>Рабочий адрес:</strong> <span ng-bind="user.address"></span></p>
+        <p><strong>Подробнее о юзере:</strong> <span ng-bind="user.about"></span></p>
+    </div>
+</div>
+
+<a class="btn btn-primary btn-md" href="#!/users/list" role="button">Перейти к странице списка юзеров</a>
+
+<!--<p>Перейти к <a href="#!/users/list">странице списка юзеров</a>.</p>-->

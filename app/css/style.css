@@ -13,4 +13,7 @@ body {
 .table-condensed > thead > tr > th {
   padding: 10px; }
 
+.well-element-block {
+  padding: 0 8px; }
+
 /*# sourceMappingURL=style.css.map */
