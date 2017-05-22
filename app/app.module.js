@@ -6,10 +6,10 @@ angular.module('myApp')
     .config( ['$routeProvider', function($routeProvider) {
         $routeProvider
             .when('/users/list', {
-                templateUrl: 'users/users-list.template.html'
+                template: '<users-list></users-list>'
             })
             .when('/users/:userId', {
-                templateUrl: 'users/users-detail.template.html'
+                template: '<user-detail></user-detail>'
             })
             .otherwise({
                 redirectTo: '/users/list'
