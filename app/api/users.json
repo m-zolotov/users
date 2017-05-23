@@ -118,41 +118,5 @@
     "email": "annatrevino@zerology.com",
     "phone": "+1 (896) 448-3400",
     "address": "329 Whitty Lane, Eden, Kentucky, 3573"
-  },
-  {
-    "age": 23,
-    "id": "5922d65191972c68fbbc1152",
-    "name": "Nash Langley",
-    "status": false,
-    "about": "Irure adipisicing esse tempor anim excepteur. Ea excepteur ullamco do Lorem Lorem dolor consectetur pariatur in et ea aliquip. Sint exercitation ex voluptate occaecat laboris anim deserunt eiusmod exercitation eu.\r\n",
-    "balance": "$2,967.98",
-    "gender": "male",
-    "email": "nashlangley@zerology.com",
-    "phone": "+1 (957) 468-2203",
-    "address": "784 Halleck Street, Lavalette, Virgin Islands, 7770"
-  },
-  {
-    "age": 33,
-    "id": "5922d651189be5d56bf9bba2",
-    "name": "Vincent Orr",
-    "status": true,
-    "about": "Mollit duis sunt deserunt veniam dolor consequat non irure. In culpa ad eu dolore ea pariatur excepteur in sint id labore laboris. Elit id ut et eu non sit ullamco Lorem. Minim commodo minim enim proident culpa exercitation non do voluptate in quis eu fugiat. Ut cupidatat Lorem pariatur enim. Excepteur do cillum eu tempor. Mollit pariatur eu commodo aute dolor ex sunt.\r\n",
-    "balance": "$2,014.99",
-    "gender": "male",
-    "email": "vincentorr@zerology.com",
-    "phone": "+1 (942) 547-2723",
-    "address": "422 Clinton Avenue, Farmington, Wisconsin, 156"
-  },
-  {
-    "age": 20,
-    "id": "5922d65173c7b943239898b1",
-    "name": "Gonzales Wilkins",
-    "status": true,
-    "about": "Ipsum adipisicing dolore officia ullamco eiusmod ullamco cupidatat ex quis. Sit consequat excepteur est Lorem excepteur minim nulla magna irure. Amet dolor id cillum elit consequat occaecat. Consequat cillum aliqua ipsum nostrud exercitation sit voluptate reprehenderit exercitation veniam nostrud cillum id reprehenderit. Cupidatat enim labore exercitation cupidatat id adipisicing dolor reprehenderit est tempor. Irure magna ullamco consequat non.\r\n",
-    "balance": "$2,523.70",
-    "gender": "male",
-    "email": "gonzaleswilkins@zerology.com",
-    "phone": "+1 (839) 403-3119",
-    "address": "550 Strong Place, Navarre, Iowa, 6209"
   }
 ]
