@@ -48,7 +48,6 @@ angular.module('Users')
                         if (usersList[i].id === user) {
                             userDetail = usersList[i];
                         }
-                        break;
                     }
                     deferred.resolve(userDetail);
                 } else {
