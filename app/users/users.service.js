@@ -4,10 +4,9 @@ angular.module('Users')
     .factory('userService', function($http, $q){
         var usersList = undefined;
         var userDetail = undefined;
+        var deferred = $q.defer();
         return{
             getData: function(){
-                var deferred = $q.defer();
-
                 if (usersList === undefined) {
                     $http({
                         method: 'GET', url: './api/users.json'
@@ -25,8 +24,20 @@ angular.module('Users')
                 return deferred.promise;
             },
             getUser: function(user){
-                var deferred = $q.defer();
+                this.getData().
+                then(function(users) {
+                    for (var i = 0; i < usersList.length; i++) {
+                        if (usersList[i].id === user) {
+                            userDetail = usersList[i];
+                            break;
+                        }
+                    }
+                    deferred.resolve(userDetail);
+                    console.log('userDetail', userDetail);
+                });
+                return deferred.promise;
 
+                /*var deferred = $q.defer();
                 if (usersList === undefined) {
                     $http({
                         method: 'GET', url: './api/users.json'
@@ -53,9 +64,7 @@ angular.module('Users')
                     deferred.resolve(userDetail);
                 } else {
                     deferred.resolve(userDetail);
-                }
-
-                return deferred.promise;
+                }*/
             }
         }
     });
