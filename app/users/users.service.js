@@ -36,8 +36,8 @@ angular.module('Users')
                         for (var i = 0; i < usersList.length; i++) {
                             if (usersList[i].id === user) {
                                 userDetail = usersList[i];
+                                break;
                             }
-                            break;
                         }
                         deferred.resolve(userDetail);
                     },function error(response) {
@@ -47,6 +47,7 @@ angular.module('Users')
                     for (var i = 0; i < usersList.length; i++) {
                         if (usersList[i].id === user) {
                             userDetail = usersList[i];
+                            break;
                         }
                     }
                     deferred.resolve(userDetail);
