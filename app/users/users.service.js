@@ -3,7 +3,6 @@
 angular.module('Users')
     .factory('userService', function($http, $q){
         var usersList = undefined;
-        var selectedID = undefined;
         var userDetail = undefined;
         return{
             getData: function(){
@@ -34,21 +33,11 @@ angular.module('Users')
                     }).
                     then (function success(response) {
                         usersList = response.data;
-                        if (selectedID !== user) {
-                            selectedID = user;
-                            for (var i = 0; i < usersList.length; i++) {
-                                if (usersList[i].id === selectedID) {
-                                    userDetail = usersList[i];
-                                }
-                                break;
+                        for (var i = 0; i < usersList.length; i++) {
+                            if (usersList[i].id === user) {
+                                userDetail = usersList[i];
                             }
-                        } else {
-                            for (var i = 0; i < usersList.length; i++) {
-                                if (usersList[i].id === selectedID) {
-                                    userDetail = usersList[i];
-                                }
-                                break;
-                            }
+                            break;
                         }
                         deferred.resolve(userDetail);
                     },function error(response) {
@@ -56,7 +45,7 @@ angular.module('Users')
                     });
                 } else if (usersList !== undefined) {
                     for (var i = 0; i < usersList.length; i++) {
-                        if (usersList[i].id === selectedID) {
+                        if (usersList[i].id === user) {
                             userDetail = usersList[i];
                         }
                         break;
@@ -67,7 +56,6 @@ angular.module('Users')
                 }
 
                 return deferred.promise;
-                /**/
             }
         }
     });
