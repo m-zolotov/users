@@ -5,15 +5,9 @@ angular.module('Users')
         templateUrl: 'users/users-detail.template.html',
         controller: ['userService', '$http', '$q', '$routeParams', function(userService, $http, $q, $routeParams) {
             var self = this;
-            var user;
             var userID = $routeParams.userId;
-            var promiseObjDetail = userService.getData();
-            promiseObjDetail.then(function(value) {
-                for (var i = 0; i < value.length; i++) {
-                    if (value[i].id === userID) {
-                        self.user = value[i];
-                    }
-                }
+            userService.getUser(userID).then(function(value) {
+                self.user = value;
             });
         }]
     });
