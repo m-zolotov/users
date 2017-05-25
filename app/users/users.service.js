@@ -29,12 +29,13 @@ angular.module('Users')
                     for (var i = 0; i < usersList.length; i++) {
                         if (usersList[i].id === user) {
                             userDetail = usersList[i];
+                            deferred.resolve(userDetail);
                             break;
                         }
                     }
-                    deferred.resolve(userDetail);
                     console.log('userDetail', userDetail);
                 });
+
                 return deferred.promise;
 
                 /*var deferred = $q.defer();
