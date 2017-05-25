@@ -47,14 +47,18 @@ angular.module('Users')
                     for (var i = 0; i < usersList.length; i++) {
                         if (usersList[i].id === user) {
                             for (var a = 0; a < usersList[a].length; a++) {
+                                console.log (usersList[a]);
                                 usersList[a][key] = user[key];
+                                console.log (user);
                             }
+                            break;
                         }
-                        break;
                     }
                 },function error(users) {
                     deferred.reject(users.status);
                 });
+
+                return deferred.promise;
             }
         }
     });

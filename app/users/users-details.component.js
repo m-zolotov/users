@@ -9,7 +9,11 @@ angular.module('Users')
             userService.getUser(userID).then(function(value) {
                 self.user = value;
             });
-            // userService.editUser(user);
-            // userService.saveUser(user);
+            userService.saveUser(userID).then(function(value) {
+                self.user = value;
+            });
+            self.saveUsersClick = function () {
+                userService.saveUser(userID);
+            }
         }]
     });
