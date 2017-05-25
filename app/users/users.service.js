@@ -45,11 +45,12 @@ angular.module('Users')
                 this.getData().
                 then(function success(users) {
                     for (var i = 0; i < usersList.length; i++) {
+                        console.log (usersList[i].name);
                         if (usersList[i].id === user) {
                             for (var a = 0; a < usersList[a].length; a++) {
-                                console.log (usersList[a]);
+                                // console.log (usersList[a]);
                                 usersList[a][key] = user[key];
-                                console.log (user);
+                                // console.log (user);
                             }
                             break;
                         }
