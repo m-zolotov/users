@@ -39,6 +39,21 @@ angular.module('Users')
                 });
 
                 return deferred.promise;
+            },
+            saveUser: function(user){
+                var deferred = $q.defer();
+                this.getData().
+                then(function success(users) {
+                    for (var i = 0; i < usersList.length; i++) {
+                        if (usersList[i].id === user) {
+                            usersList[i].forEach(function(item, i, arr) {
+                                usersList[i][key] = usersList[i][key];
+                            });
+                        }
+                    }
+                },function error(users) {
+                    deferred.reject(users.status);
+                });
             }
         }
     });
