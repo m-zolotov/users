@@ -25,7 +25,7 @@ angular.module('Users')
             },
             getUser: function(user){
                 this.getData().
-                then(function(users) {
+                then(function success(users) {
                     for (var i = 0; i < usersList.length; i++) {
                         if (usersList[i].id === user) {
                             userDetail = usersList[i];
@@ -34,6 +34,8 @@ angular.module('Users')
                         }
                     }
                     console.log('userDetail', userDetail);
+                },function error(users) {
+                    deferred.reject(users.status);
                 });
 
                 return deferred.promise;
