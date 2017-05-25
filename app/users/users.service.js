@@ -4,9 +4,9 @@ angular.module('Users')
     .factory('userService', function($http, $q){
         var usersList = undefined;
         var userDetail = undefined;
-        var deferred = $q.defer();
         return{
             getData: function(){
+                var deferred = $q.defer();
                 if (usersList === undefined) {
                     $http({
                         method: 'GET', url: './api/users.json'
@@ -24,6 +24,7 @@ angular.module('Users')
                 return deferred.promise;
             },
             getUser: function(user){
+                var deferred = $q.defer();
                 this.getData().
                 then(function success(users) {
                     for (var i = 0; i < usersList.length; i++) {
@@ -33,41 +34,11 @@ angular.module('Users')
                             break;
                         }
                     }
-                    console.log('userDetail', userDetail);
                 },function error(users) {
                     deferred.reject(users.status);
                 });
 
                 return deferred.promise;
-
-                /*var deferred = $q.defer();
-                if (usersList === undefined) {
-                    $http({
-                        method: 'GET', url: './api/users.json'
-                    }).
-                    then (function success(response) {
-                        usersList = response.data;
-                        for (var i = 0; i < usersList.length; i++) {
-                            if (usersList[i].id === user) {
-                                userDetail = usersList[i];
-                                break;
-                            }
-                        }
-                        deferred.resolve(userDetail);
-                    },function error(response) {
-                        deferred.reject(response.status);
-                    });
-                } else if (usersList !== undefined) {
-                    for (var i = 0; i < usersList.length; i++) {
-                        if (usersList[i].id === user) {
-                            userDetail = usersList[i];
-                            break;
-                        }
-                    }
-                    deferred.resolve(userDetail);
-                } else {
-                    deferred.resolve(userDetail);
-                }*/
             }
         }
     });
