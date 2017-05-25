@@ -50,6 +50,7 @@ angular.module('Users')
                                 usersList[a][key] = user[key];
                             }
                         }
+                        break;
                     }
                 },function error(users) {
                     deferred.reject(users.status);
