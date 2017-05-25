@@ -4,16 +4,85 @@
 
 <div class="well">
     <div class="well-element-block">
-        <p><strong>Пол:</strong> <span ng-bind="$ctrl.user.gender"></span></p>
-        <p><strong>Возраст:</strong> <span ng-bind="$ctrl.user.age"></span></p>
-        <p><strong>Баланс счета:</strong> <span ng-bind="$ctrl.user.balance"></span></p>
-        <p><strong>Телефон:</strong> <span ng-bind="$ctrl.user.phone"></span></p>
-        <p><strong>E-mail:</strong> <span ng-bind="$ctrl.user.email"></span></p>
-        <p><strong>Рабочий адрес:</strong> <span ng-bind="$ctrl.user.address"></span></p>
-        <p><strong>Подробнее о юзере:</strong> <span ng-bind="$ctrl.user.about"></span></p>
+        <form action="">
+            <div>
+                <label for="user-name" class="control-label">
+                    <strong>Имя:</strong>
+                </label>
+                <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+                    <span ng-bind="$ctrl.user.name" ng-hide="elementsVisibility"></span>
+                    <input type="text" id="user-name" placeholder="Введите имя нового юзера" ng-show="elementsVisibility">
+                </div>
+            </div>
+            <div>
+                <label for="user-gender" class="control-label">
+                    <strong>Пол:</strong>
+                </label>
+                <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+                    <span ng-bind="$ctrl.user.gender" ng-hide="elementsVisibility"></span>
+                    <input type="text" id="user-gender" placeholder="Введите пол нового юзера" ng-show="elementsVisibility">
+                </div>
+            </div>
+            <div>
+                <label for="user-age" class="control-label">
+                    <strong>Возраст:</strong>
+                </label>
+                <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+                    <span ng-bind="$ctrl.user.age" ng-hide="elementsVisibility"></span>
+                    <input type="text" id="user-age" placeholder="Введите возраст нового юзера" ng-show="elementsVisibility">
+                </div>
+            </div>
+            <div>
+                <label for="user-balance" class="control-label">
+                    <strong>Баланс счета:</strong>
+                </label>
+                <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+                    <span ng-bind="$ctrl.user.balance" ng-hide="elementsVisibility"></span>
+                    <input type="text" id="user-balance" placeholder="Введите баланс счета нового юзера" ng-show="elementsVisibility">
+                </div>
+            </div>
+            <div>
+                <label for="user-phone" class="control-label">
+                    <strong>Телефон:</strong>
+                </label>
+                <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+                    <span ng-bind="$ctrl.user.phone" ng-hide="elementsVisibility"></span>
+                    <input type="text" id="user-phone" placeholder="Введите телефон нового юзера" ng-show="elementsVisibility">
+                </div>
+            </div>
+            <div>
+                <label for="user-email" class="control-label">
+                    <strong>E-mail:</strong>
+                </label>
+                <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+                    <span ng-bind="$ctrl.user.email" ng-hide="elementsVisibility"></span>
+                    <input type="text" id="user-email" placeholder="Введите e-mail нового юзера" ng-show="elementsVisibility">
+                </div>
+            </div>
+            <div>
+                <label for="user-address" class="control-label">
+                    <strong>Рабочий адрес:</strong>
+                </label>
+                <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+                    <span ng-bind="$ctrl.user.address" ng-hide="elementsVisibility"></span>
+                    <input type="text" id="user-address" placeholder="Введите рабочий адрес нового юзера" ng-show="elementsVisibility">
+                </div>
+            </div>
+            <div>
+                <label for="user-about" class="control-label">
+                    <strong>Подробнее о юзере:</strong>
+                </label>
+                <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+                    <span ng-bind="$ctrl.user.about" ng-hide="elementsVisibility"></span>
+                    <textarea type="text" id="user-about" placeholder="Введите дополнительную информацию о новом юзере" ng-show="elementsVisibility"></textarea>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 
+<button class="btn btn-default btn-md" type="submit" ng-click="elementsVisibility = !elementsVisibility" ng-hide="elementsVisibility">Редактировать</button>
+<button class="btn btn-default btn-md" type="submit" ng-click="elementsVisibility = !elementsVisibility" ng-show="elementsVisibility">Сохранить</button>
 <a class="btn btn-primary btn-md" href="#!/users/list" role="button">Перейти к странице списка юзеров</a>
 
 <!--<p>Перейти к <a href="#!/users/list">странице списка юзеров</a>.</p>-->
