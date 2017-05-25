@@ -46,9 +46,9 @@ angular.module('Users')
                 then(function success(users) {
                     for (var i = 0; i < usersList.length; i++) {
                         if (usersList[i].id === user) {
-                            usersList[i].forEach(function(item, i, arr) {
-                                usersList[i][key] = usersList[i][key];
-                            });
+                            for (var a = 0; a < usersList[a].length; a++) {
+                                usersList[a][key] = user[key];
+                            }
                         }
                     }
                 },function error(users) {
