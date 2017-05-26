@@ -46,21 +46,13 @@ angular.module('Users')
                 then(function success(users) {
                     for (var i = 0; i < usersList.length; i++) {
                         if (usersList[i].id === userID) {
-                            //console.log ('user', usersList[i], Object.keys(usersList[i]));
-                            //console.log ('user', usersList[i]);
+                            console.log ('usersList[i]', usersList[i]);
                             for (var key in usersList[i]) {
                                 if (usersList[i][key] !== user[key]) {
                                     usersList[i][key] = user[key];
-                                    console.log ('user[i][key]', usersList[i].key);
+                                    console.log ('user[i][key]', usersList[i][key]);
                                 }
                             }
-                            /*for (var a = 0; a < Object.keys(usersList[i]).length; a++) {
-                                //console.log ('user2', Object.keys(usersList[i])[a]);
-                                if (Object.keys(usersList[i])[a] !== user[a]) {
-                                    //usersList[i][a] = user[a];
-                                    //console.log ('saveUsersList', Object.keys(usersList[i])[a]);
-                                }
-                            }*/
                             break;
                         }
                     }
