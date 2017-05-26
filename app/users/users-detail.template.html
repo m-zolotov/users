@@ -21,49 +21,49 @@
             <div class="form-group">
                 <label for="userName" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">Имя:</label>
                 <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-                    <input type="text" class="form-control" id="userName" placeholder="Введите имя нового юзера" ng-model="$ctrl.user.name">
+                    <input type="text" class="form-control" id="userName" placeholder="Введите имя нового юзера" ng-model="$ctrl.editedUser.name">
                 </div>
             </div>
             <div class="form-group">
                 <label for="userGender" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">Пол:</label>
                 <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-                    <input type="text" class="form-control" id="userGender" placeholder="Введите пол нового юзера" ng-model="$ctrl.user.gender">
+                    <input type="text" class="form-control" id="userGender" placeholder="Введите пол нового юзера" ng-model="$ctrl.editedUser.gender">
                 </div>
             </div>
             <div class="form-group">
                 <label for="userAge" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">Возраст:</label>
                 <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-                    <input type="text" class="form-control" id="userAge" placeholder="Введите возраст нового юзера" ng-model="$ctrl.user.age">
+                    <input type="text" class="form-control" id="userAge" placeholder="Введите возраст нового юзера" ng-model="$ctrl.editedUser.age">
                 </div>
             </div>
             <div class="form-group">
                 <label for="userBalance" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">Баланс счета:</label>
                 <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-                    <input type="text" class="form-control" id="userBalance" placeholder="Введите баланс счета нового юзера" ng-model="$ctrl.user.balance">
+                    <input type="text" class="form-control" id="userBalance" placeholder="Введите баланс счета нового юзера" ng-model="$ctrl.editedUser.balance">
                 </div>
             </div>
             <div class="form-group">
                 <label for="userPhone" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">Телефон:</label>
                 <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-                    <input type="text" class="form-control" id="userPhone" placeholder="Введите телефон нового юзера" ng-model="$ctrl.user.phone">
+                    <input type="text" class="form-control" id="userPhone" placeholder="Введите телефон нового юзера" ng-model="$ctrl.editedUser.phone">
                 </div>
             </div>
             <div class="form-group">
                 <label for="userEmail" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">E-mail:</label>
                 <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-                    <input type="text" class="form-control" id="userEmail" placeholder="Введите e-mail нового юзера" ng-model="$ctrl.user.email">
+                    <input type="text" class="form-control" id="userEmail" placeholder="Введите e-mail нового юзера" ng-model="$ctrl.editedUser.email">
                 </div>
             </div>
             <div class="form-group">
                 <label for="userAddress" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">Рабочий адрес:</label>
                 <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-                    <input type="text" class="form-control" id="userAddress" placeholder="Введите рабочий адрес нового юзера" ng-model="$ctrl.user.address">
+                    <input type="text" class="form-control" id="userAddress" placeholder="Введите рабочий адрес нового юзера" ng-model="$ctrl.editedUser.address">
                 </div>
             </div>
             <div class="form-group">
                 <label for="userAbout" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">Подробнее о юзере:</label>
                 <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-                    <textarea type="text" class="form-control" id="userAbout" placeholder="Введите дополнительную информацию о новом юзере" ng-model="$ctrl.user.about"></textarea>
+                    <textarea class="form-control" id="userAbout" placeholder="Введите дополнительную информацию о новом юзере" ng-model="$ctrl.editedUser.about"></textarea>
                 </div>
             </div>
         </form>
@@ -71,7 +71,7 @@
 </div>
 
 <button class="btn btn-default btn-md" type="submit" ng-click="elementsVisibility = !elementsVisibility" ng-hide="elementsVisibility">Редактировать</button>
-<button class="btn btn-default btn-md" type="submit" ng-click="$ctrl.saveUsersClick(); elementsVisibility = !elementsVisibility" ng-show="elementsVisibility">Сохранить</button>
+<button class="btn btn-default btn-md" type="submit" ng-click="$ctrl.editedUser(); elementsVisibility = !elementsVisibility" ng-show="elementsVisibility">Сохранить</button>
 <a class="btn btn-primary btn-md" href="#!/users/list" role="button">Перейти к странице списка юзеров</a>
 
-<!--<p>Перейти к <a href="#!/users/list">странице списка юзеров</a>.</p>-->
+

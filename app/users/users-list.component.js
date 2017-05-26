@@ -6,6 +6,7 @@ angular.module('Users')
         controller: ['userService', '$http', '$q', '$routeParams', function(userService, $http, $q, $routeParams) {
             var self = this;
             self.title = 'Список юзеров';
+
             userService.getData().then(function(value) {
                 self.users = value;
             });

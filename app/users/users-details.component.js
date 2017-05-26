@@ -6,14 +6,19 @@ angular.module('Users')
         controller: ['userService', '$http', '$q', '$routeParams', function(userService, $http, $q, $routeParams) {
             var self = this;
             var userID = $routeParams.userId;
+            /*self.editedUser = function () {
+                console.log('Hi!');
+            };*/
+
             userService.getUser(userID).then(function(value) {
                 self.user = value;
             });
-            userService.saveUser(userID).then(function(value) {
+
+            userService.saveUser(self.user).then(function(value) {
                 self.user = value;
             });
-            self.saveUsersClick = function () {
-                userService.saveUser(userID);
-            }
+
+            /*userService.saveUser(self.user);*/
+
         }]
     });

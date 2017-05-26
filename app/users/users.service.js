@@ -44,17 +44,13 @@ angular.module('Users')
                 var deferred = $q.defer();
                 this.getData().
                 then(function success(users) {
-                    for (var i = 0; i < usersList.length; i++) {
-                        console.log (usersList[i].name);
-                        if (usersList[i].id === user) {
-                            for (var a = 0; a < usersList[a].length; a++) {
-                                // console.log (usersList[a]);
-                                usersList[a][key] = user[key];
-                                // console.log (user);
-                            }
-                            break;
+                    console.log(user);
+                    /*for (var i = 0; i < usersList.length; i++) {
+                        if (usersList[i].id === user.id) {
+                            //for (var i = 0; i < usersList.length; i++)
+                            console.log ('usersList[i]', [i], usersList[i]);
                         }
-                    }
+                    }*/
                 },function error(users) {
                     deferred.reject(users.status);
                 });
