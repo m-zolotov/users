@@ -23,12 +23,12 @@ angular.module('Users')
 
                 return deferred.promise;
             },
-            getUser: function(user){
+            getUser: function(userID){
                 var deferred = $q.defer();
                 this.getData().
                 then(function success(users) {
                     for (var i = 0; i < usersList.length; i++) {
-                        if (usersList[i].id === user) {
+                        if (usersList[i].id === userID) {
                             userDetail = usersList[i];
                             deferred.resolve(userDetail);
                             break;
@@ -40,17 +40,22 @@ angular.module('Users')
 
                 return deferred.promise;
             },
-            saveUser: function(user){
+            saveUser: function(user, userID){
                 var deferred = $q.defer();
                 this.getData().
                 then(function success(users) {
-                    console.log(user);
-                    /*for (var i = 0; i < usersList.length; i++) {
-                        if (usersList[i].id === user.id) {
-                            //for (var i = 0; i < usersList.length; i++)
-                            console.log ('usersList[i]', [i], usersList[i]);
+                    for (var i = 0; i < usersList.length; i++) {
+                        if (usersList[i].id === userID) {
+                            console.log ('usersList[i]', usersList[i]);
+                            for (var a = 0; a < usersList[i].length; a++) {
+                                console.log ('user', usersList[i][a]);
+                                if (usersList[i][a] !== user[a]) {
+                                    usersList[i][a] = user[a];
+                                    console.log ('saveUsersList', usersList[i][a]);
+                                }
+                            }
                         }
-                    }*/
+                    }
                 },function error(users) {
                     deferred.reject(users.status);
                 });
