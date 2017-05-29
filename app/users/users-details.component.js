@@ -12,10 +12,19 @@ angular.module('Users')
                 self.user = value;
             });
 
+            self.editUser = function () {
+                self.elementsVisibility = !self.elementsVisibility;
+            };
+
             self.saveUser = function () {
+                self.elementsVisibility = !self.elementsVisibility;
                 userService.saveUser(self.user).then(function(value) {
-                    // console.log('value', value);
-                    self.user = value;
+                    // self.user = value;
+                    for (var key in self.user) {
+                        if (self.user[key] !== value[key]) {
+                            self.user[key] = value[key];
+                        }
+                    }
                 });
             };
         }]

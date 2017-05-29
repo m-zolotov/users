@@ -3,7 +3,6 @@
 angular.module('Users')
     .factory('userService', function($http, $q){
         var usersList = undefined;
-        var userDetail = undefined;
         return{
             getData: function(){
                 var deferred = $q.defer();
@@ -25,6 +24,7 @@ angular.module('Users')
             },
             getUser: function(userID){
                 var deferred = $q.defer();
+                var userDetail = undefined;
                 this.getData().
                 then(function success(users) {
                     for (var i = 0; i < usersList.length; i++) {
@@ -46,6 +46,16 @@ angular.module('Users')
                 then(function success(users) {
                     for (var i = 0; i < usersList.length; i++) {
                         if (usersList[i].id === user.id) {
+                            usersList[i].age = user.age;
+                            usersList[i].name = user.name;
+                            usersList[i].status = user.status;
+                            usersList[i].about = user.about;
+                            usersList[i].balance = user.balance;
+                            usersList[i].gender = user.gender;
+                            usersList[i].email = user.email;
+                            usersList[i].phone = user.phone;
+                            usersList[i].address = user.address;
+
                             deferred.resolve(JSON.parse(JSON.stringify(user)));
                             break;
                         }
@@ -55,25 +65,6 @@ angular.module('Users')
                 });
 
                 return deferred.promise;
-
-                /*var deferred = $q.defer();
-                this.getData().
-                then(function success(users) {
-                    for (var i = 0; i < usersList.length; i++) {
-                        if (usersList[i].id === userID) {
-                            for (var key in usersList[i]) {
-                                if (usersList[i][key] !== user[key]) {
-                                    usersList[i][key] = user[key];
-                                }
-                            }
-                            break;
-                        }
-                    }
-                },function error(users) {
-                    deferred.reject(users.status);
-                });
-
-                return deferred.promise;*/
             }
         }
     });
