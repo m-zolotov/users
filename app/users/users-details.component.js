@@ -6,6 +6,7 @@ angular.module('Users')
         controller: ['userService', '$http', '$q', '$routeParams', function(userService, $http, $q, $routeParams) {
             var self = this;
             var userID = $routeParams.userId;
+            self.elementsVisibility = false;
 
             userService.getUser(userID).then(function(value) {
                 self.user = value;
