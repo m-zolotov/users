@@ -15,7 +15,7 @@
     </div>
 </div>
 
-<div class="user-edit-form">
+<div class="user-edit-form" ng-show="elementsVisibility">
     <div class="page-header table-header">
         <h2>Форма редактирования юзера</h2>
     </div>
@@ -76,8 +76,8 @@
     </div>
 </div>
 
-<button class="btn btn-default btn-md" type="submit">Редактировать</button>
-<button class="btn btn-default btn-md" type="submit" ng-click="$ctrl.saveUser();">Сохранить</button>
+<button class="btn btn-default btn-md" type="submit" ng-click="elementsVisibility = !elementsVisibility" ng-hide="elementsVisibility">Редактировать</button>
+<button class="btn btn-default btn-md" type="submit" ng-click="$ctrl.saveUser(); elementsVisibility = !elementsVisibility" ng-show="elementsVisibility">Сохранить</button>
 <a class="btn btn-primary btn-md" href="#!/users/list" role="button">Перейти к странице списка юзеров</a>
 
 

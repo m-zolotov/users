@@ -13,7 +13,7 @@ angular.module('Users')
                     }).
                     then (function success(response) {
                         usersList = response.data;
-                        deferred.resolve(usersList);
+                        deferred.resolve(JSON.parse(JSON.stringify(usersList)));
                     },function error(response) {
                         deferred.reject(response.status);
                     });
@@ -30,7 +30,7 @@ angular.module('Users')
                     for (var i = 0; i < usersList.length; i++) {
                         if (usersList[i].id === userID) {
                             userDetail = usersList[i];
-                            deferred.resolve(userDetail);
+                            deferred.resolve(JSON.parse(JSON.stringify(userDetail)));
                             break;
                         }
                     }
@@ -46,13 +46,7 @@ angular.module('Users')
                 then(function success(users) {
                     for (var i = 0; i < usersList.length; i++) {
                         if (usersList[i].id === user.id) {
-                            var cloneUser = JSON.stringify(user).slice();
-                            cloneUser = JSON.parse(cloneUser);
-                            deferred.resolve(cloneUser);
-
-                            // var cloneUser = user.slice();
-                            console.log('user', user);
-                            //console.log('cloneUser', cloneUser);
+                            deferred.resolve(JSON.parse(JSON.stringify(user)));
                             break;
                         }
                     }

@@ -13,8 +13,8 @@ angular.module('Users')
 
             self.saveUser = function () {
                 userService.saveUser(self.user).then(function(value) {
-                    //self.cloneUser = value;
-                    console.log('value', value);
+                    // console.log('value', value);
+                    self.user = value;
                 });
             };
         }]
