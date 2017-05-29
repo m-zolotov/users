@@ -40,17 +40,35 @@ angular.module('Users')
 
                 return deferred.promise;
             },
-            saveUser: function(user, userID){
+            saveUser: function(user){
                 var deferred = $q.defer();
                 this.getData().
                 then(function success(users) {
                     for (var i = 0; i < usersList.length; i++) {
+                        if (usersList[i].id === user.id) {
+                            var cloneUser = JSON.stringify(user);
+                            cloneUser = JSON.parse(cloneUser);
+                            deferred.resolve(cloneUser);
+                            break;
+                            // var cloneUser = user.slice();
+                            // console.log('user', user);
+                            // console.log('cloneUser', cloneUser);
+                        }
+                    }
+                },function error(users) {
+                    deferred.reject(users.status);
+                });
+
+                return deferred.promise;
+
+                /*var deferred = $q.defer();
+                this.getData().
+                then(function success(users) {
+                    for (var i = 0; i < usersList.length; i++) {
                         if (usersList[i].id === userID) {
-                            console.log ('usersList[i]', usersList[i]);
                             for (var key in usersList[i]) {
                                 if (usersList[i][key] !== user[key]) {
                                     usersList[i][key] = user[key];
-                                    console.log ('user[i][key]', usersList[i][key]);
                                 }
                             }
                             break;
@@ -60,7 +78,7 @@ angular.module('Users')
                     deferred.reject(users.status);
                 });
 
-                return deferred.promise;
+                return deferred.promise;*/
             }
         }
     });
