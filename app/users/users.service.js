@@ -46,13 +46,14 @@ angular.module('Users')
                 then(function success(users) {
                     for (var i = 0; i < usersList.length; i++) {
                         if (usersList[i].id === user.id) {
-                            var cloneUser = JSON.stringify(user);
+                            var cloneUser = JSON.stringify(user).slice();
                             cloneUser = JSON.parse(cloneUser);
                             deferred.resolve(cloneUser);
-                            break;
+
                             // var cloneUser = user.slice();
-                            // console.log('user', user);
-                            // console.log('cloneUser', cloneUser);
+                            console.log('user', user);
+                            //console.log('cloneUser', cloneUser);
+                            break;
                         }
                     }
                 },function error(users) {
