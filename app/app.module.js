@@ -11,6 +11,9 @@ angular.module('myApp')
             .when('/users/:userId', {
                 template: '<user-detail></user-detail>'
             })
+            .when('/users/:create', {
+                template: '<user-detail></user-detail>'
+            })
             .otherwise({
                 redirectTo: '/users/list'
                 // template: '404 No such page'

@@ -16,5 +16,11 @@ angular.module('Users')
                     self.users = value;
                 });
             };
+
+            self.createUser = function () {
+                userService.createUser().then(function(value) {
+                    //self.users = value;
+                });
+            };
         }]
     });

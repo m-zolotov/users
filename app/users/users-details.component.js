@@ -17,10 +17,20 @@ angular.module('Users')
             };
 
             self.saveUser = function () {
-                self.elementsVisibility = !self.elementsVisibility;
-                userService.saveUser(self.user).then(function(value) {
-                    self.user = value;
-                });
+                if (userID === 'create') {
+                    userService.saveUser('-1').then(function(value) {
+                        self.user = value;
+                    });
+                } else {
+                    self.editUser();
+                    userService.saveUser(self.user).then(function(value) {
+                        self.user = value;
+                    });
+                }
             };
+
+            if (userID === 'create') {
+                self.editUser();
+            }
         }]
     });

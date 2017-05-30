@@ -6,7 +6,6 @@
     <table class="table">
         <thead>
         <tr>
-            <th>ID</th>
             <th>Name</th>
             <th class="text-center">Age</th>
             <th class="text-center">Status</th>
@@ -16,9 +15,8 @@
         <tbody>
         <tr ng-repeat="user in $ctrl.users">
             <td>
-                <a href="#!/users/{{user.id}}" ng-bind="user.id"></a>
+                <a href="#!/users/{{user.id}}" ng-bind="user.name"></a>
             </td>
-            <td ng-bind="user.name"></td>
             <td class="text-center" ng-bind="user.age"></td>
             <td class="text-center" ng-bind="user.status"></td>
             <td class="text-center">
@@ -30,5 +28,5 @@
         </tbody>
     </table>
 
-    <button type="button" class="btn btn-primary btn-create-user">Добавить нового юзера</button>
+    <a class="btn btn-primary btn-create-user" href="#!/users/create" role="button" ng-click="$ctrl.deleteUser('create')">Добавить нового юзера</a>
 </div>
