@@ -18,7 +18,9 @@ angular.module('Users')
 
             self.saveUser = function () {
                 if (userID === 'create') {
-                    userService.saveUser('-1').then(function(value) {
+                    self.user.id = '-1';
+                    self.editUser();
+                    userService.saveUser(self.user).then(function(value) {
                         self.user = value;
                     });
                 } else {

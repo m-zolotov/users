@@ -16,6 +16,5 @@ angular.module('myApp')
             })
             .otherwise({
                 redirectTo: '/users/list'
-                // template: '404 No such page'
             });
     }]);

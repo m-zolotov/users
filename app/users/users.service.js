@@ -44,20 +44,26 @@ angular.module('Users')
                 var deferred = $q.defer();
                 this.getData().
                 then(function success(users) {
-                    for (var i = 0; i < usersList.length; i++) {
-                        if (usersList[i].id === user.id) {
-                            usersList[i].age = user.age;
-                            usersList[i].name = user.name;
-                            usersList[i].status = user.status;
-                            usersList[i].about = user.about;
-                            usersList[i].balance = user.balance;
-                            usersList[i].gender = user.gender;
-                            usersList[i].email = user.email;
-                            usersList[i].phone = user.phone;
-                            usersList[i].address = user.address;
+                    if (user.id === '-1') {
+                        user.id = usersList.length;
+                        usersList.push(user);
+                        deferred.resolve(JSON.parse(JSON.stringify(user)));
+                    } else {
+                        for (var i = 0; i < usersList.length; i++) {
+                            if (usersList[i].id === user.id) {
+                                usersList[i].age = user.age;
+                                usersList[i].name = user.name;
+                                usersList[i].status = user.status;
+                                usersList[i].about = user.about;
+                                usersList[i].balance = user.balance;
+                                usersList[i].gender = user.gender;
+                                usersList[i].email = user.email;
+                                usersList[i].phone = user.phone;
+                                usersList[i].address = user.address;
 
-                            deferred.resolve(JSON.parse(JSON.stringify(user)));
-                            break;
+                                deferred.resolve(JSON.parse(JSON.stringify(user)));
+                                break;
+                            }
                         }
                     }
                 },function error(users) {
@@ -77,6 +83,17 @@ angular.module('Users')
                             break;
                         }
                     }
+                },function error(users) {
+                    deferred.reject(users.status);
+                });
+
+                return deferred.promise;
+            },
+            createUser: function(userID){
+                var deferred = $q.defer();
+                this.getData().
+                then(function success(users) {
+                    deferred.resolve(JSON.parse(JSON.stringify(usersList)));
                 },function error(users) {
                     deferred.reject(users.status);
                 });
