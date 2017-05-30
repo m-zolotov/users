@@ -17,6 +17,12 @@ body {
   padding: 0 8px; }
 
 .container {
-  padding-bottom: 50px; }
+  padding-bottom: 150px; }
+
+.btn-delete-user .glyphicon {
+  top: 2px; }
+.btn-create-user {
+  display: flex;
+  margin: auto; }
 
 /*# sourceMappingURL=style.css.map */

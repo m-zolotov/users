@@ -10,5 +10,11 @@ angular.module('Users')
             userService.getData().then(function(value) {
                 self.users = value;
             });
+
+            self.deleteUser = function (userID) {
+                userService.deleteUser(userID).then(function(value) {
+                    self.users = value;
+                });
+            };
         }]
     });

@@ -10,6 +10,7 @@
             <th>Name</th>
             <th class="text-center">Age</th>
             <th class="text-center">Status</th>
+            <th class="text-center">Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -20,8 +21,14 @@
             <td ng-bind="user.name"></td>
             <td class="text-center" ng-bind="user.age"></td>
             <td class="text-center" ng-bind="user.status"></td>
+            <td class="text-center">
+                <button type="button" class="btn btn-danger btn-xs btn-delete-user" ng-click="$ctrl.deleteUser(user.id)">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </button>
+            </td>
         </tr>
         </tbody>
     </table>
+
+    <button type="button" class="btn btn-primary btn-create-user">Добавить нового юзера</button>
 </div>
-<!--<p>Перейти к <a href="#!/users/:userId">странице юзера</a>.</p>-->

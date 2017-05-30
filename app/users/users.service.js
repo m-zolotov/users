@@ -65,6 +65,23 @@ angular.module('Users')
                 });
 
                 return deferred.promise;
+            },
+            deleteUser: function(userID){
+                var deferred = $q.defer();
+                this.getData().
+                then(function success(users) {
+                    for (var i = 0; i < usersList.length; i++) {
+                        if (usersList[i].id === userID) {
+                            usersList.splice([i], 1);
+                            deferred.resolve(JSON.parse(JSON.stringify(usersList)));
+                            break;
+                        }
+                    }
+                },function error(users) {
+                    deferred.reject(users.status);
+                });
+
+                return deferred.promise;
             }
         }
     });

@@ -23,3 +23,15 @@ body {
 .container {
   padding-bottom: 150px;
 }
+
+.btn {
+  &-delete-user {
+    .glyphicon {
+      top: 2px;
+    }
+  }
+  &-create-user {
+    display: flex;
+    margin: auto;
+  }
+}

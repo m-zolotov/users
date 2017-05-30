@@ -19,12 +19,7 @@ angular.module('Users')
             self.saveUser = function () {
                 self.elementsVisibility = !self.elementsVisibility;
                 userService.saveUser(self.user).then(function(value) {
-                    // self.user = value;
-                    for (var key in self.user) {
-                        if (self.user[key] !== value[key]) {
-                            self.user[key] = value[key];
-                        }
-                    }
+                    self.user = value;
                 });
             };
         }]
