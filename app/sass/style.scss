@@ -16,6 +16,13 @@ body {
   padding: 10px;
 }
 
+.table-header--element {
+  .users-list-form,
+  .btn-create-user {
+    margin: 22px auto 8px;
+  }
+}
+
 .well-element-block {
   padding: 0 8px;
 }
@@ -29,7 +36,5 @@ body {
     .glyphicon {
       top: 2px;
     }
-  }
-  &-create-user {
   }
 }

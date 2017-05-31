@@ -1,5 +1,19 @@
-<div class="page-header table-header">
-    <h2><span ng-bind="$ctrl.title"></span> <span class="label label-info" ng-bind="$ctrl.users.length"></span></h2>
+<div class="page-header table-header table-header--element">
+    <div class="row">
+        <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h2><span ng-bind="$ctrl.title"></span> <span class="label label-info" ng-bind="$ctrl.users.length"></span></h2>
+        </div>
+        <div class="col col-xs-12 col-sm-3 col-md-3 col-lg-3">
+            <form action="" class="users-list-form">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="" placeholder="Поиск юзера ..." ng-model="$ctrl.usersListFilter">
+                </div>
+            </form>
+        </div>
+        <div class="col col-xs-12 col-sm-3 col-md-3 col-lg-3 text-right">
+            <a class="btn btn-primary btn-create-user" href="#!/users/create" role="button">Добавить юзера</a>
+        </div>
+    </div>
 </div>
 
 <div class="well">
@@ -13,7 +27,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="user in $ctrl.users">
+        <tr ng-repeat="user in $ctrl.users | filter:$ctrl.usersListFilter">
             <td>
                 <a href="#!/users/{{user.id}}" ng-bind="user.name"></a>
             </td>
@@ -27,6 +41,4 @@
         </tr>
         </tbody>
     </table>
-
-    <a class="btn btn-primary btn-create-user" href="#!/users/create" role="button">Добавить нового юзера</a>
 </div>
