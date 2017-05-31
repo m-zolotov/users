@@ -16,11 +16,5 @@ angular.module('Users')
                     self.users = value;
                 });
             };
-
-            self.createUser = function (userID) {
-                userService.createUser(userID).then(function(value) {
-                    self.users = value;
-                });
-            };
         }]
     });
