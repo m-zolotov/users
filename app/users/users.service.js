@@ -44,8 +44,11 @@ angular.module('Users')
                 var deferred = $q.defer();
                 this.getData().
                 then(function success(users) {
+                    function getMaxUserId (users) {
+
+                    }
                     if (user.id === '-1') {
-                        user.id = String(usersList.length);
+                        user.id = String(usersList.length);// ? Функция, которая смотрит самый высокий id в массиве и выставляет следующий
                         usersList.push(user);
                         deferred.resolve(JSON.parse(JSON.stringify(user)));
                     } else {

@@ -16,6 +16,10 @@ body {
   padding: 10px;
 }
 
+.users-list-table {
+  margin-bottom: 0;
+}
+
 .table-header--element {
   .users-list-form,
   .btn-create-user {
@@ -27,11 +31,10 @@ body {
   padding: 0 8px;
 }
 
-.container {
-  padding-bottom: 150px;
-}
-
 .btn {
+  &-block {
+    margin-bottom: 20px;
+  }
   &-delete-user {
     .glyphicon {
       top: 2px;

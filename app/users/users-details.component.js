@@ -3,7 +3,7 @@
 angular.module('Users')
     .component('userDetail', {
         templateUrl: 'users/users-detail.template.html',
-        controller: ['userService', '$http', '$q', '$routeParams', function(userService, $http, $q, $routeParams) {
+        controller: ['userService', '$http', '$q', '$routeParams', '$location', function(userService, $http, $q, $routeParams, $location) {
             var self = this;
             var userID = $routeParams.userId;
             self.elementsVisibility = false;
@@ -22,6 +22,7 @@ angular.module('Users')
                 }
                 self.editUser();
                 userService.saveUser(self.user).then(function(value) {
+                    $location.path('/users/' + self.user.id);
                     self.user = value;
                 });
             };

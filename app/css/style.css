@@ -13,6 +13,9 @@ body {
 .table-condensed > thead > tr > th {
   padding: 10px; }
 
+.users-list-table {
+  margin-bottom: 0; }
+
 .table-header--element .users-list-form,
 .table-header--element .btn-create-user {
   margin: 22px auto 8px; }
@@ -20,9 +23,8 @@ body {
 .well-element-block {
   padding: 0 8px; }
 
-.container {
-  padding-bottom: 150px; }
-
+.btn-block {
+  margin-bottom: 20px; }
 .btn-delete-user .glyphicon {
   top: 2px; }
 
