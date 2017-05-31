@@ -45,7 +45,7 @@ angular.module('Users')
                 this.getData().
                 then(function success(users) {
                     if (user.id === '-1') {
-                        user.id = usersList.length;
+                        user.id = String(usersList.length);
                         usersList.push(user);
                         deferred.resolve(JSON.parse(JSON.stringify(user)));
                     } else {
