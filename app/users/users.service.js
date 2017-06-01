@@ -42,13 +42,19 @@ angular.module('Users')
             },
             saveUser: function(user){
                 var deferred = $q.defer();
+                function getMaxUserId(users) {
+                    var maxID = 0;
+                    for (var i = 0; i < users.length; i++) {
+                        if (maxID < Number(users[i].id)) {
+                            maxID = Number(users[i].id);
+                        }
+                    }
+                    return ++maxID;
+                }
                 this.getData().
                 then(function success(users) {
-                    function getMaxUserId (users) {
-
-                    }
                     if (user.id === '-1') {
-                        user.id = String(usersList.length);// ? Функция, которая смотрит самый высокий id в массиве и выставляет следующий
+                        user.id = String(getMaxUserId(users));
                         usersList.push(user);
                         deferred.resolve(JSON.parse(JSON.stringify(user)));
                     } else {
