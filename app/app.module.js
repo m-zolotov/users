@@ -1,10 +1,13 @@
 'use strict';
 
-angular.module('myApp', ['ngRoute', 'Users']);
+angular.module('myApp', ['ngRoute', 'Users', 'Product']);
 
 angular.module('myApp')
     .config( ['$routeProvider', function($routeProvider) {
         $routeProvider
+            .when('/product/list', {
+                template: '<product-list></product-list>'
+            })
             .when('/users/list', {
                 template: '<users-list></users-list>'
             })
