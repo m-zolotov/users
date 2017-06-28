@@ -50,6 +50,14 @@
   &--internal-list {
     margin-bottom: 0;
   }
+  &--hidden {
+    height: 0;
+    overflow: hidden;
+  }
+  &--visible {
+    height: auto;
+    overflow: auto;
+  }
   &--collapse {
     display: none;
   }
@@ -59,4 +67,14 @@
   &--collapse-in {
     display: block;
   }
+}
+
+.productsListHidden {
+  height: 0;
+  overflow: hidden;
+}
+
+.productsListVisible {
+  height: auto;
+  overflow: visible;
 }

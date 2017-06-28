@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('Product')
-    .factory('productService', function($http, $q){
+angular.module('Accordion')
+    .factory('accordionService', function($http, $q){
         var productList = undefined;
         return{
             getData: function(){
