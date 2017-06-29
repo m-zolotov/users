@@ -1,0 +1,4 @@
+<a class="products-list__item-link" href="" ng-bind="product.title" ng-click="product.open = !product.open"></a>
+<ul class="products-list products-list--internal-list" ng-if="product.products" ng-class="product.open ? 'products-list--hidden' : 'products-list--show'">
+    <li class="products-list__item products-list__item--internal-item" ng-repeat="product in product.products" ng-include="$ctrl.template.url"></li>
+</ul>

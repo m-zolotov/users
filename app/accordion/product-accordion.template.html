@@ -9,20 +9,7 @@
 <div class="row">
     <div class="col col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <ul class="products-list">
-            <li class="products-list__item" ng-repeat="product in $ctrl.products">
-                <a class="products-list__item-link" href="" ng-bind="product.element" ng-click="$ctrl.visibleElements()"></a>
-                <ul class="products-list products-list--internal-list" ng-if="product.subElement" ng-class="{productsListHidden: $ctrl.hideElement, productsListVisible: $ctrl.showElement}"><!--Первый уровень вложенности-->
-                    <li class="products-list__item products-list__item--internal-item" ng-repeat="product in product.subElement">
-                        <a class="products-list__item-link" href="" ng-bind="product.element" ng-click="$ctrl.visibleElements()"></a>
-                        <ul class="products-list products-list--internal-list" ng-if="product.subElement" ng-class="{productsListHidden: $ctrl.hideElement, productsListVisible: $ctrl.showElement}"><!--Второй уровень вложенности-->
-                            <li class="products-list__item products-list__item--internal-item" ng-repeat="product in product.subElement">
-                                <a class="products-list__item-link" href="" ng-bind="product.element" ng-click=""></a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
+            <li class="products-list__item" ng-repeat="product in $ctrl.products" ng-include="$ctrl.template.url"></li>
         </ul>
     </div>
-
 </div>
