@@ -26,18 +26,22 @@
   &__item {
     position: relative;
     display: block;
-    padding: 10px 15px;
+    padding: 10px 50px 10px 15px;
     margin-bottom: -1px;
     background-color: #fff;
     border: 1px solid #ddd;
     &--internal-item {
       border: none;
+      margin-right: -50px;
+      background-color: transparent;
       &:last-child {
         padding-bottom: 0;
       }
     }
   }
   &__item-link {
+    display: inline-block;
+    width: 100%;
     cursor: pointer;
     color: #337ab7;
     text-decoration: none;
@@ -47,25 +51,65 @@
       text-decoration: none;
     }
   }
+  &__badge {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 15px;
+    top: 9px;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    &:focus,
+    &:hover {
+      text-decoration: none;
+    }
+    &--info {
+      border: 1px solid #337ab7;
+      border-radius: 50%;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+  }
+  &__tooltip {
+    display: block;
+    position: absolute;
+    width: 164px;// 50%
+    right: calc(-164px - 10px);// calc(-50% - 10px)
+    top: 6px;// 10px
+    background: #5cb85c;
+    color: #ffffff;
+    padding: 5px 8px;
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 7px;
+      left: -5px;
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-right: 6px solid #5cb85c;
+      border-bottom: 5px solid transparent;
+    }
+    &--hide {
+      display: none;
+    }
+    &--show {
+      display: block;
+    }
+  }
   &--internal-list {
     margin-bottom: 0;
   }
-  &--hidden {
+  &--hide {
     height: 0;
     overflow: hidden;
   }
-  &--visible {
+  &--show {
     height: auto;
-    overflow: auto;
-  }
-  &--collapse {
-    display: none;
-  }
-  &--collapsing {
-
-  }
-  &--collapse-in {
-    display: block;
+    overflow: visible;
+    padding: 10px 0 0;
   }
 }
 

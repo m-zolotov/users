@@ -1,4 +1,6 @@
-<a class="products-list__item-link" href="" ng-bind="product.title" ng-click="product.open = !product.open"></a>
-<ul class="products-list products-list--internal-list" ng-if="product.products" ng-class="product.open ? 'products-list--hidden' : 'products-list--show'">
+<a class="products-list__item-link" href="" ng-bind="product.title" ng-click="product.blockOpen = !product.blockOpen"></a>
+<a class="products-list__badge products-list__badge--info" href="" ng-click="$ctrl.setTooltip(product)">?</a><!-- product.tooltipOpen = !product.tooltipOpen -->
+<small class="products-list__tooltip" ng-bind="product.info" ng-class="product.tooltipOpen ? 'products-list__tooltip--hide' : 'products-list__tooltip--show'"></small>
+<ul class="products-list products-list--internal-list" ng-if="product.products" ng-class="product.blockOpen ? 'products-list--hide' : 'products-list--show'">
     <li class="products-list__item products-list__item--internal-item" ng-repeat="product in product.products" ng-include="$ctrl.template.url"></li>
 </ul>

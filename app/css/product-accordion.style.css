@@ -22,33 +22,74 @@
   .products-list__item {
     position: relative;
     display: block;
-    padding: 10px 15px;
+    padding: 10px 50px 10px 15px;
     margin-bottom: -1px;
     background-color: #fff;
     border: 1px solid #ddd; }
     .products-list__item--internal-item {
-      border: none; }
+      border: none;
+      margin-right: -50px;
+      background-color: transparent; }
       .products-list__item--internal-item:last-child {
         padding-bottom: 0; }
   .products-list__item-link {
+    display: inline-block;
+    width: 100%;
     cursor: pointer;
     color: #337ab7;
     text-decoration: none;
     background-color: transparent; }
     .products-list__item-link:focus, .products-list__item-link:hover {
       text-decoration: none; }
+  .products-list__badge {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 15px;
+    top: 9px;
+    width: 22px;
+    height: 22px;
+    text-align: center; }
+    .products-list__badge:focus, .products-list__badge:hover {
+      text-decoration: none; }
+    .products-list__badge--info {
+      border: 1px solid #337ab7;
+      border-radius: 50%;
+      font-weight: bold;
+      line-height: 1.5; }
+  .products-list__tooltip {
+    display: block;
+    position: absolute;
+    width: 164px;
+    right: calc(-164px - 10px);
+    top: 6px;
+    background: #5cb85c;
+    color: #ffffff;
+    padding: 5px 8px; }
+    .products-list__tooltip:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 7px;
+      left: -5px;
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-right: 6px solid #5cb85c;
+      border-bottom: 5px solid transparent; }
+    .products-list__tooltip--hide {
+      display: none; }
+    .products-list__tooltip--show {
+      display: block; }
   .products-list--internal-list {
     margin-bottom: 0; }
-  .products-list--hidden {
+  .products-list--hide {
     height: 0;
     overflow: hidden; }
-  .products-list--visible {
+  .products-list--show {
     height: auto;
-    overflow: auto; }
-  .products-list--collapse {
-    display: none; }
-  .products-list--collapse-in {
-    display: block; }
+    overflow: visible;
+    padding: 10px 0 0; }
 
 .productsListHidden {
   height: 0;
